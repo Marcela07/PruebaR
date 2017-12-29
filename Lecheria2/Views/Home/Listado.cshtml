@@ -1,0 +1,42 @@
+﻿
+@model IEnumerable<Lecheria2.Models.Vacas>
+@{
+    ViewBag.Title = "Listado";
+}
+
+<h2>Listado</h2>
+
+
+<table class="table table-responsive table-bordered">
+
+    <thead>
+    <th>Nombre Animal</th>
+    <th>Sexo</th>
+    <th>Raza</th>
+    <th>Promedio Leche Por Dia </th>
+
+
+
+    </thead>
+
+
+
+    <tbody>
+
+
+
+
+        @foreach (var lecheria2 in Model)
+        {
+            <tr>
+
+                <td> @lecheria2.Nombre</td>
+                <td> @lecheria2.Sexo</td>
+                <td> @lecheria2.Raza</td>
+                <td> @lecheria2.Promedio_leche_Dia</td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>

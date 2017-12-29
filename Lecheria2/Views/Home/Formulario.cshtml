@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Formulario";
+}
+
+<h2>Formulario</h2>
+
+
+
+
+<fieldset>
+    <legend>Mantendor de Vacas</legend>
+    @using (@Html.BeginForm("Guardar", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Nombre
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("nombre", null, new { @class = "form-control" })
+            </span>
+        </div>
+
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Sexo
+            </span>
+            <span class="col-md-6">
+                @Html.DropDownList("sexo", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Macho", Value="Macho"},
+                        new SelectListItem{Text="Hembra", Value="Hembra"}
+                    },
+                    "Seleccione un Sexo",
+                    new { @class = "form-control" }
+                    )
+            </span>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Raza
+            </span>
+            <span class="col-md-6">
+                @Html.DropDownList("raza", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="HOLSTEIN", Value="HOLSTEIN"},
+                        new SelectListItem{Text="JERSEY", Value="JERSEY"},
+
+                    },
+                                                 new { @class = "form-control" }
+                                                 )
+            </span>
+        </div>
+
+
+
+        <div class="form-group">
+            <span class="col-md-2">
+                    Promedio_leche_
+            </span>
+            <span class="col-md-6">
+                @Html.DropDownList("Promedio leche por dia", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="BAJO", Value="Bajo"},
+                        new SelectListItem{Text="MEDIANO", Value="Mediano"},
+                        new SelectListItem{Text="ALTO", Value="Alto"},
+
+                    },
+                                                 new { @class = "form-control" }
+                                                 )
+            </span>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Enviar formulario</button>
+        </div>
+
+    }
+
+</fieldset>
